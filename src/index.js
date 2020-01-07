@@ -66,24 +66,23 @@ function calcInterpolationValuesForHalfCircle2(
 }
 
 function getInitialState(props) {
-  const circleProgress = new Animated.Value(props.seconds)
+  const circleProgress = new Animated.Value(props.progress)
   return {
     circleProgress,
-    secondsElapsed: 0,
     interpolationValuesHalfCircle1: calcInterpolationValuesForHalfCircle1(
       circleProgress,
-      props,
+      props
     ),
     interpolationValuesHalfCircle2: calcInterpolationValuesForHalfCircle2(
       circleProgress,
-      props,
-    ),
-  }
+      props
+    )
+  };
 }
 
 export default class PercentageCircle extends React.PureComponent {
                  static propTypes = {
-                   seconds: PropTypes.number.isRequired,
+                   progress: PropTypes.number.isRequired,
                    radius: PropTypes.number.isRequired,
                    color: PropTypes.string,
                    shadowColor: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
@@ -97,7 +96,7 @@ export default class PercentageCircle extends React.PureComponent {
                    color: "#f00",
                    shadowColor: "pink",
                    bgColor: "blue",
-                   borderWidth: 2,
+                   borderWidth: 1,
                    children: null,
                    containerStyle: null,
                    textStyle: null
@@ -111,7 +110,7 @@ export default class PercentageCircle extends React.PureComponent {
                  }
 
                  componentWillReceiveProps(nextProps) {
-                   if (this.props.seconds !== nextProps.seconds) {
+                   if (this.props.progress !== nextProps.progress) {
                      this.state.circleProgress.stopAnimation();
                      this.setState(
                        getInitialState(nextProps),
@@ -124,7 +123,7 @@ export default class PercentageCircle extends React.PureComponent {
                    // if animation was interrupted by stopAnimation don't restart it.
                    if (!finished) return;
 
-                   const updatedText = this.props.seconds;
+                   const updatedText = this.props.progress;
                    this.setState({
                      ...getInitialState(this.props),
                      text: updatedText
@@ -183,7 +182,7 @@ export default class PercentageCircle extends React.PureComponent {
                            height: this.props.radius * 2,
                            borderRadius: this.props.radius,
                            backgroundColor: this.props.color,
-                           borderWidth: 1,
+                           borderWidth: this.props.borderWidth,
                            borderColor: this.props.shadowColor
                          }
                        ]}
