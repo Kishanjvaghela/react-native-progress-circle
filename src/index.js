@@ -85,8 +85,7 @@ export default class PercentageCircle extends React.PureComponent {
                    color: PropTypes.string,
                    bgColor: PropTypes.string,
                    borderColor: PropTypes.string,
-                   borderWidth: PropTypes.number,
-                   containerStyle: ViewPropTypesStyle
+                   borderWidth: PropTypes.number
                  };
 
                  static defaultProps = {
@@ -94,8 +93,7 @@ export default class PercentageCircle extends React.PureComponent {
                    borderColor: "blue",
                    bgColor: "#fff",
                    borderWidth: 1,
-                   children: null,
-                   containerStyle: null
+                   children: null
                  };
 
                  constructor(props) {
