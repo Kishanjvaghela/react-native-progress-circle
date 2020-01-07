@@ -1,12 +1,12 @@
 {
-  "name": "react-native-countdown-circle",
-  "version": "3.0.1",
-  "description": "A light-weight countdown circle indicator for React Native.",
+  "name": "react-native-progress-circle",
+  "version": "1.0.0",
+  "description": "A light-weight circle progress for React Native.",
   "main": "src/index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:MrToph/react-native-countdown-circle.git"
+    "url": "git@github.com:Kishanjvaghela/react-native-progress-circle.git"
   },
   "keywords": [
     "react",
@@ -17,7 +17,7 @@
     "timer",
     "indicator"
   ],
-  "author": "Christoph Michel",
+  "author": "Kishan Vaghela",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^7.2.1",
