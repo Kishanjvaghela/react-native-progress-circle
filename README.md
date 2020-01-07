@@ -1,6 +1,6 @@
-# React Native Countdown Circle
+# React Native Progress Circle
 
-![React Native Countdown Circles](/README/progress-demo.png?raw=true "React Native Countdown Circles")
+![React Native Progress Circles](/README/progress-demo.png?raw=true "React Native Progress Circles")
 
 ## Features
 
