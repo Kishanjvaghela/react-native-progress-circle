@@ -1,9 +1,7 @@
 import React from 'react'
 import {
-  Easing,
   Animated,
   StyleSheet,
-  Text,
   View,
   ViewPropTypes,
 } from 'react-native'
@@ -120,11 +118,8 @@ export default class PercentageCircle extends React.PureComponent {
                  onCircleAnimated = ({ finished }) => {
                    // if animation was interrupted by stopAnimation don't restart it.
                    if (!finished) return;
-
-                   const updatedText = this.props.progress;
                    this.setState({
-                     ...getInitialState(this.props),
-                     text: updatedText
+                     ...getInitialState(this.props)
                    });
                  };
 
