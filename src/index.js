@@ -39,19 +39,19 @@ const styles = StyleSheet.create({
   },
 })
 
-function calcInterpolationValuesForHalfCircle1(animatedValue, { shadowColor }) {
+function calcInterpolationValuesForHalfCircle1(animatedValue, { color }) {
   const rotate = animatedValue.interpolate({
     inputRange: [0, 50, 50, 100],
     outputRange: ['0deg', '180deg', '180deg', '180deg'],
   })
 
-  const backgroundColor = shadowColor
+  const backgroundColor = color
   return { rotate, backgroundColor }
 }
 
 function calcInterpolationValuesForHalfCircle2(
   animatedValue,
-  { color, shadowColor },
+  { bgColor, color },
 ) {
   const rotate = animatedValue.interpolate({
     inputRange: [0, 50, 50, 100],
@@ -60,7 +60,7 @@ function calcInterpolationValuesForHalfCircle2(
 
   const backgroundColor = animatedValue.interpolate({
     inputRange: [0, 50, 50, 100],
-    outputRange: [color, color, shadowColor, shadowColor],
+    outputRange: [bgColor, bgColor, color, color],
   })
   return { rotate, backgroundColor }
 }
@@ -88,8 +88,7 @@ export default class PercentageCircle extends React.PureComponent {
                    bgColor: PropTypes.string,
                    borderColor: PropTypes.string,
                    borderWidth: PropTypes.number,
-                   containerStyle: ViewPropTypesStyle,
-                   textStyle: Text.propTypes.style
+                   containerStyle: ViewPropTypesStyle
                  };
 
                  static defaultProps = {
@@ -98,8 +97,7 @@ export default class PercentageCircle extends React.PureComponent {
                    bgColor: "#fff",
                    borderWidth: 1,
                    children: null,
-                   containerStyle: null,
-                   textStyle: null
+                   containerStyle: null
                  };
 
                  constructor(props) {
