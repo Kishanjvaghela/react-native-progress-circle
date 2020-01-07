@@ -85,17 +85,17 @@ export default class PercentageCircle extends React.PureComponent {
                    progress: PropTypes.number.isRequired,
                    radius: PropTypes.number.isRequired,
                    color: PropTypes.string,
-                   shadowColor: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
                    bgColor: PropTypes.string,
+                   borderColor: PropTypes.string,
                    borderWidth: PropTypes.number,
                    containerStyle: ViewPropTypesStyle,
                    textStyle: Text.propTypes.style
                  };
 
                  static defaultProps = {
-                   color: "#f00",
-                   shadowColor: "pink",
-                   bgColor: "blue",
+                   color: "blue",
+                   borderColor: "blue",
+                   bgColor: "#fff",
                    borderWidth: 1,
                    children: null,
                    containerStyle: null,
@@ -181,9 +181,9 @@ export default class PercentageCircle extends React.PureComponent {
                            width: this.props.radius * 2,
                            height: this.props.radius * 2,
                            borderRadius: this.props.radius,
-                           backgroundColor: this.props.color,
+                           backgroundColor: this.props.bgColor,
                            borderWidth: this.props.borderWidth,
-                           borderColor: this.props.shadowColor
+                           borderColor: this.props.borderColor
                          }
                        ]}
                      >
